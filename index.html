@@ -130,6 +130,15 @@
   .founder-quote { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 400; line-height: 1.5; color: var(--text-primary); font-style: italic; margin-bottom: 14px; }
   .founder-credit { font-size: 13.5px; color: var(--text-muted); }
   .founder-credit strong { color: var(--text-secondary); font-weight: 500; }
+  .founder-body { font-size: 15px; line-height: 1.65; color: var(--text-secondary); margin-bottom: 14px; max-width: 560px; }
+
+  /* Share section */
+  .share-box { display: flex; gap: 10px; max-width: 520px; flex-wrap: wrap; }
+  .share-link {
+    flex: 1; min-width: 200px; background: var(--surface); border: 1px solid var(--border);
+    padding: 13px 16px; border-radius: 8px; font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; color: var(--text-secondary); overflow-x: auto; white-space: nowrap; display: flex; align-items: center;
+  }
 
   /* Footer CTA */
   .final-cta { text-align: center; padding: 80px 0 60px; border-top: 1px solid var(--border-soft); }
@@ -299,7 +308,10 @@
       <div class="founder-avatar">MS</div>
       <div>
         <p class="founder-quote">"I built the tool I wished I had — one that reads my data like a clinician would, without needing me to be my own full-time care team."</p>
-        <p class="founder-credit"><strong>Maressa Spohn, RN, CDCES</strong> — founder of Diabalyze. Diabetes educator. Living with type 1 diabetes.</p>
+        <p class="founder-body">I've lived with type 1 diabetes for 35 years. I'm also a Registered Nurse and a Certified Diabetes Care and Education Specialist — so I've spent my career on both sides of this disease: as the patient staring at a CGM graph at 2am trying to figure out what it's telling me, and as the clinician other people call when they're doing the same thing.</p>
+        <p class="founder-body">I wear a pump and a CGM myself. I know exactly how much data that generates — and how little of it turns into an actual answer on its own. More numbers were supposed to mean more control. Instead, most days, it just means more to carry alone.</p>
+        <p class="founder-body">So I built Diabalyze: something that reads CGM and pump data the way a clinician would, flags what's actually worth noticing, and has a real CDCES review every insight before it reaches you. Not another app guessing at your glucose — a second set of trained eyes, from someone who's been exactly where you are.</p>
+        <p class="founder-credit"><strong>Maressa Spohn, RN, CDCES</strong> — founder of Diabalyze. 35 years living with type 1 diabetes. Pump and CGM user.</p>
       </div>
     </div>
   </section>
@@ -314,6 +326,19 @@
       <button type="submit" class="btn">Join the waitlist</button>
     </form>
     <p class="form-note" id="form-note-2"></p>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="section-eyebrow">Help this reach people</div>
+    <h2>Know someone this could help?</h2>
+    <p class="section-sub">Share the waitlist with anyone living with diabetes, caring for someone who does, or working in diabetes care.</p>
+    <div class="share-box">
+      <div class="share-link" id="share-link">https://diabalyze-app.github.io/diabalyze-site/</div>
+      <button class="btn" id="copy-link-btn" type="button">Copy link</button>
+    </div>
+    <p class="form-note" id="copy-note"></p>
   </section>
 </div>
 
@@ -372,6 +397,20 @@
   }
   handleSignup('waitlist-form', 'email-input', 'form-note');
   handleSignup('waitlist-form-2', 'email-input-2', 'form-note-2');
+
+  const copyBtn = document.getElementById('copy-link-btn');
+  const copyNote = document.getElementById('copy-note');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function() {
+      const link = document.getElementById('share-link').textContent.trim();
+      navigator.clipboard.writeText(link).then(function() {
+        copyNote.textContent = 'Copied to clipboard!';
+        copyNote.classList.add('success');
+      }).catch(function() {
+        copyNote.textContent = 'Could not copy — select and copy the link manually.';
+      });
+    });
+  }
 </script>
 
 </body>
