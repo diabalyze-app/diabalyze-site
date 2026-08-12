@@ -90,14 +90,10 @@
   .stat-track { position: relative; height: 8px; background: var(--surface); border-radius: 4px; overflow: hidden; }
   .stat-fill { height: 100%; border-radius: 4px; }
   .stat-value { font-family: 'JetBrains Mono', monospace; font-size: 14px; text-align: right; }
-  .stat-row.dietitian .stat-fill { background: var(--band-line); width: 32%; }
-  .stat-row.dietitian .stat-value { color: var(--band-line); }
-  .stat-row.chatgpt .stat-fill { background: var(--text-muted); width: 50%; }
-  .stat-row.chatgpt .stat-value { color: var(--text-secondary); }
-  .stat-row.claude .stat-fill { background: var(--text-muted); width: 58%; }
-  .stat-row.claude .stat-value { color: var(--text-secondary); }
-  .stat-row.gemini .stat-fill { background: var(--text-muted); width: 70%; }
-  .stat-row.gemini .stat-value { color: var(--text-secondary); }
+  .stat-row.noprompt .stat-fill { background: var(--text-muted); width: 1.2%; }
+  .stat-row.noprompt .stat-value { color: var(--text-secondary); }
+  .stat-row.withprompt .stat-fill { background: var(--band-line); width: 12.9%; }
+  .stat-row.withprompt .stat-value { color: var(--band-line); }
   .stat-foot { margin-top: 20px; font-size: 13px; color: var(--text-muted); max-width: 560px; }
   .cite { margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--text-muted); max-width: 560px; }
   .cite a { color: var(--text-muted); }
@@ -206,34 +202,24 @@
 
 <div class="wrap">
   <section class="section">
-    <div class="section-eyebrow">The gap AI alone doesn't close</div>
-    <h2>General-purpose AI is measurably less accurate than a trained diabetes educator.</h2>
-    <p class="section-sub">A 2025 clinical comparison found trained dietitians estimated meal carbohydrates far more accurately than general-purpose AI models: the kind of accuracy you'd expect from an expert CDCES RN or RD. The gap holds even for today's most capable tools.</p>
+    <div class="section-eyebrow">The gap between visits</div>
+    <h2>Most diabetes care doesn't happen in the exam room.</h2>
+    <p class="section-sub">A typical office visit with an endocrine provider or CDCES lasts a few minutes and happens a few times a year. Everything else, the patterns, the 2am readings, the days that don't go as planned, happens without anyone looking. Even the support that's proven to help often never reaches the people who need it.</p>
 
     <div class="stat-scale">
-      <div class="stat-row dietitian">
-        <div class="stat-label">Expert CDCES RN or RD</div>
+      <div class="stat-row noprompt">
+        <div class="stat-label">Referred without a prompt</div>
         <div class="stat-track"><div class="stat-fill"></div></div>
-        <div class="stat-value">13g avg error</div>
+        <div class="stat-value">1.2%</div>
       </div>
-      <div class="stat-row chatgpt">
-        <div class="stat-label">ChatGPT</div>
+      <div class="stat-row withprompt">
+        <div class="stat-label">Referred with an EHR prompt</div>
         <div class="stat-track"><div class="stat-fill"></div></div>
-        <div class="stat-value">20g avg error</div>
-      </div>
-      <div class="stat-row claude">
-        <div class="stat-label">Claude</div>
-        <div class="stat-track"><div class="stat-fill"></div></div>
-        <div class="stat-value">23g avg error</div>
-      </div>
-      <div class="stat-row gemini">
-        <div class="stat-label">Gemini</div>
-        <div class="stat-track"><div class="stat-fill"></div></div>
-        <div class="stat-value">28g avg error</div>
+        <div class="stat-value">12.9%</div>
       </div>
     </div>
-    <p class="stat-foot">Diabalyze doesn't ask you to trust the AI's number. It uses AI to catch the pattern, then puts a CDCES between the pattern and you, closing the gap the raw models can't close alone.</p>
-    <p class="cite">Source: Goncalves et al., "Chat, Gemini and Claude at the dinner table," <em>Diabetes Research and Clinical Practice</em> (2025). <a href="https://doi.org/10.1016/j.diabres.2025.113031" target="_blank" rel="noopener">DOI: 10.1016/j.diabres.2025.113031</a></p>
+    <p class="stat-foot">One health system found that structured diabetes self-management education and support, the kind a CDCES delivers, reached barely more than 1 in 100 eligible patients during routine primary care visits, even when patients qualified for it. Diabalyze is built to close that gap between visits, not add another one.</p>
+    <p class="cite">Source: Young et al., "Increasing Diabetes Self-Management Education and Support Referrals with an Electronic Best Practice Advisory," <em>Journal of the American Board of Family Medicine</em> (2026). <a href="https://doi.org/10.3122/jabfm.2025.250280R1" target="_blank" rel="noopener">DOI: 10.3122/jabfm.2025.250280R1</a></p>
   </section>
 </div>
 
