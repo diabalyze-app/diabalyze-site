@@ -99,6 +99,8 @@
   .stat-row.gemini .stat-fill { background: var(--text-muted); width: 70%; }
   .stat-row.gemini .stat-value { color: var(--text-secondary); }
   .stat-foot { margin-top: 20px; font-size: 13px; color: var(--text-muted); max-width: 560px; }
+  .cite { margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--text-muted); max-width: 560px; }
+  .cite a { color: var(--text-muted); }
 
   /* How it works */
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -197,11 +199,11 @@
   <section class="section">
     <div class="section-eyebrow">The gap AI alone doesn't close</div>
     <h2>General-purpose AI is measurably less accurate than a trained diabetes educator.</h2>
-    <p class="section-sub">A 2026 clinical comparison tested AI models against expert dietitians on carbohydrate estimation from meal photos. The gap holds even for today's most capable tools.</p>
+    <p class="section-sub">A 2025 clinical comparison found trained dietitians estimated meal carbohydrates far more accurately than general-purpose AI models — the kind of accuracy you'd expect from an expert CDCES RN or RD. The gap holds even for today's most capable tools.</p>
 
     <div class="stat-scale">
       <div class="stat-row dietitian">
-        <div class="stat-label">Expert dietitian</div>
+        <div class="stat-label">Expert CDCES RN or RD</div>
         <div class="stat-track"><div class="stat-fill"></div></div>
         <div class="stat-value">13g avg error</div>
       </div>
@@ -222,6 +224,17 @@
       </div>
     </div>
     <p class="stat-foot">Diabalyze doesn't ask you to trust the AI's number. It uses AI to catch the pattern, then puts a CDCES between the pattern and you — closing the gap the raw models can't close alone.</p>
+    <p class="cite">Source: Goncalves et al., "Chat, Gemini and Claude at the dinner table," <em>Diabetes Research and Clinical Practice</em> (2025). <a href="https://doi.org/10.1016/j.diabres.2025.113031" target="_blank" rel="noopener">DOI: 10.1016/j.diabres.2025.113031</a></p>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="section-eyebrow">The problem more tech doesn't fix</div>
+    <h2>Another device doesn't mean less overwhelm.</h2>
+    <p class="section-sub">The largest qualitative synthesis of patient experience with CGM and insulin pump therapy — 54 studies, 1,845 participants — found people consistently felt "bewildered by unfamiliar technology" and "overwhelmed by data," even as the devices themselves improved their glucose control. More streams of data isn't the same as more clarity.</p>
+    <p class="stat-foot">Diabalyze is built around that finding: it doesn't hand you another dashboard. It filters the noise and hands you one reviewed observation at a time.</p>
+    <p class="cite">Source: Natale et al., systematic review of qualitative studies, <em>Journal of Diabetes</em> (2023). <a href="https://doi.org/10.1111/1753-0407.13454" target="_blank" rel="noopener">DOI: 10.1111/1753-0407.13454</a></p>
   </section>
 </div>
 
